@@ -4,12 +4,15 @@ import CustomDateTimePicker from "./UI/CustomDateTimePicker.tsx";
 import {Dayjs} from 'dayjs';
 import CustomTimePicker from "./UI/CustomTimePicker.tsx";
 import CustomDatePicker from "./UI/CustomDatePicker.tsx";
+import {darkTheme, lightTheme} from "./theme.ts";
+import { ThemeProvider } from '@mui/material/styles';
 
 function App() {
     const [value, setValue] = React.useState<Dayjs | null>(null);
 
+
     return (
-        <>
+        <ThemeProvider theme={lightTheme}>
             <CustomAccordion
                 title={'Custom Accordion'}
                 details={'This accordion receives props and render them'}
@@ -56,7 +59,7 @@ function App() {
                 sx={{width: '300px'}}
                 labelSx={{m: 1}}
             />
-        </>
+        </ThemeProvider>
     )
 }
 

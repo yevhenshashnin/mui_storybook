@@ -6,6 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import {SxProps} from '@mui/system';
+import { useTheme } from '@mui/material/styles';
 
 interface CustomAccordionProps {
     title: string;
@@ -31,7 +32,8 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
                                                              , sx
                                                          }) => {
     const [isExpanded, setExpanded] = useState(expanded);
-
+    const theme = useTheme();
+    console.log(theme.palette.mode)
     const handleExpansionChange = () => {
         setExpanded(!isExpanded);
     };
